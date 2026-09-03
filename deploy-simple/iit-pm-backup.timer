@@ -1,0 +1,10 @@
+[Unit]
+Description=Run IIT Project Management backup daily
+
+[Timer]
+OnCalendar=*-*-* 02:30:00 Asia/Shanghai
+RandomizedDelaySec=15m
+Persistent=true
+
+[Install]
+WantedBy=timers.target

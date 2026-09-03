@@ -1,0 +1,16 @@
+[Unit]
+Description=IIT Project Management daily backup
+After=iit-pm.service
+
+[Service]
+Type=oneshot
+User=iitpm
+Group=iitpm
+WorkingDirectory=/opt/iit-pm/current
+EnvironmentFile=/opt/iit-pm/.env
+ExecStart=/opt/iit-pm/runtime/bin/node /opt/iit-pm/current/apps/server/dist/cli.js backup:create --output /opt/iit-pm/backups
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=full
+ProtectHome=true
+ReadWritePaths=/opt/iit-pm/data /opt/iit-pm/backups
