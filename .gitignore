@@ -10,7 +10,7 @@ apps/web/node_modules/.vite/
 data/
 release/
 .codex-tmp/
-attachments/
+/attachments/
 backups/
 coverage/
 *.log
